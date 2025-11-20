@@ -1,0 +1,4 @@
+/backend/vendor/
+/backend/config/gafincy-firebase-adminsdk.json
+.DS_Store
+Thumbs.db

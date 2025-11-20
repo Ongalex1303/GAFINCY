@@ -1,0 +1,691 @@
+/* GAFINCY - Main Stylesheet */
+/* File: frontend/css/style.css */
+
+/* --- Import Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;700;800&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Nunito', sans-serif;
+    
+    --color-green-primary: #2ECC71;
+    --color-green-dark: #27AE60;
+    --color-blue: #3498DB;
+    --color-yellow: #F1C40F;
+    --color-orange: #E67E22;
+    --color-purple: #8E44AD;
+    --color-white: #FFFFFF;
+    --color-light-gray: #F4F6F6;
+    --color-medium-gray: #BDC3C7;
+    --color-dark-gray: #34495E;
+    --color-text: #2c3e50;
+    --color-danger: #E74C3C;
+
+    --shadow-light: 0 4px 8px rgba(0,0,0,0.08);
+    --shadow-medium: 0 6px 12px rgba(0,0,0,0.12);
+    --border-radius: 12px;
+}
+
+/* --- General Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-light-gray);
+    color: var(--color-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* --- Login/Register Page (index.html) --- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.auth-box {
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.auth-box h1 {
+    font-family: var(--font-secondary);
+    font-weight: 800;
+    color: var(--color-green-primary);
+    margin-bottom: 0.5rem;
+}
+
+.auth-box p {
+    margin-bottom: 2rem;
+    color: var(--color-dark-gray);
+}
+
+.auth-form .input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--color-medium-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--color-green-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-green-dark);
+    transform: translateY(-2px);
+}
+
+.btn-google {
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
+    border: 1px solid var(--color-medium-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.btn-google img {
+    width: 20px;
+    height: 20px;
+}
+
+.auth-switch {
+    margin-top: 1.5rem;
+}
+
+.auth-switch a {
+    color: var(--color-green-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#error-message {
+    color: var(--color-danger);
+    margin-top: 1rem;
+    display: none;
+}
+
+/* --- Main App Layout (home.html, etc.) --- */
+.main-header {
+    background: var(--color-white);
+    box-shadow: var(--shadow-light);
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header-left .logo {
+    height: 40px;
+}
+
+.header-left .brand-name {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-green-primary);
+    text-decoration: none;
+}
+
+.header-center nav a {
+    margin: 0 1.5rem;
+    text-decoration: none;
+    color: var(--color-dark-gray);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.header-center nav a:hover, .header-center nav a.active {
+    color: var(--color-green-primary);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.gamification-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.stat-item span {
+    color: var(--color-dark-gray);
+}
+
+.icon-xp { color: var(--color-yellow); }
+.icon-coins { color: var(--color-orange); }
+.icon-hearts { color: var(--color-danger); }
+.icon-streak { color: var(--color-blue); }
+
+.profile-btn, .notification-btn, .leaderboard-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--color-dark-gray);
+    transition: color 0.3s;
+}
+.profile-btn:hover, .notification-btn:hover, .leaderboard-btn:hover {
+    color: var(--color-green-primary);
+}
+
+/* --- Generic Page Styles (Profile, Leaderboard, etc.) --- */
+.page-header {
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-green-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-medium);
+}
+
+/* Leaderboard Table */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.leaderboard-table th, .leaderboard-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+.leaderboard-table th {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.leaderboard-table tr:last-child td {
+    border-bottom: none;
+}
+.leaderboard-table tr.current-user {
+    background-color: rgba(46, 204, 113, 0.1);
+    font-weight: 700;
+}
+.leaderboard-table .rank {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-green-primary);
+    text-align: center;
+}
+.leaderboard-table .username {
+    font-weight: 600;
+}
+.leaderboard-table .xp {
+    font-weight: 700;
+    color: var(--color-orange);
+}
+
+/* --- Tambahan: Keyframes Animasi --- */
+
+/* 1. Animasi untuk Jawaban Salah (Getar) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+.shake-animation {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* 2. Animasi untuk Jawaban Benar (Berdenyut) */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+.pulse-animation {
+  animation: pulse 0.7s;
+}
+
+/* 3. Animasi untuk XP/Koin Bertambah (Meledak) */
+@keyframes burst {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.burst-animation {
+  /* Terapkan ke stat-item di header */
+  animation: burst 0.4s ease-out;
+}
+
+/* 4. Animasi untuk Halaman Muncul (Fade-in) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Tambahan: Styling Maskot --- */
+.mascot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  z-index: 2000;
+  transition: transform 0.3s ease;
+}
+.mascot-container img {
+  width: 100%;
+  height: auto;
+}
+.mascot-container:hover {
+  transform: scale(1.1);
+}
+
+/* Sembunyikan maskot di layar kecil */
+@media (max-width: 768px) {
+  .mascot-container {
+    display: none;
+  }
+}
+
+/* --- Tambahan: Styling Notifikasi --- */
+.header-right {
+    position: relative; /* Diperlukan agar dropdown pas */
+}
+
+.notification-dropdown {
+    display: none; /* Sembunyi secara default */
+    position: absolute;
+    top: 60px; /* Di bawah header */
+    right: 0;
+    width: 300px;
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--color-light-gray);
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-out;
+}
+.notification-dropdown.show {
+    display: block; /* Tampilkan saat ada kelas .show */
+}
+
+.notification-header {
+    font-weight: 700;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+.notification-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-light-gray);
+    font-size: 0.9rem;
+}
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+/* --- PERBAIKAN CSS UNTUK PETA BELAJAR (ROADMAP) --- */
+
+.roadmap-world {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-medium);
+    border: 3px solid #eee;
+}
+
+.world-title {
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    color: var(--color-purple);
+}
+.world-title.level-smp { color: var(--color-orange); }
+.world-title.level-sma { color: var(--color-blue); }
+
+.world-path {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px 30px; /* Memberi jarak antar lingkaran */
+}
+
+/* Ini adalah LINGKARAN kuis */
+.path-node {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem; /* Ukuran ikon di dalam lingkaran */
+    font-weight: 700;
+    color: var(--color-white);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 5px solid var(--color-white);
+}
+
+/* Label teks di bawah lingkaran */
+.path-node .node-label {
+    position: absolute;
+    bottom: -30px; /* Posisi di bawah lingkaran */
+    width: 150px; /* Lebar agar teks tidak terlalu panjang */
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-align: center;
+}
+
+/* Status: Terkunci */
+.node-locked {
+    background-color: var(--color-medium-gray);
+    box-shadow: 0 5px 0 #95a5a6; /* Efek 3D */
+    cursor: not-allowed;
+}
+.node-locked i {
+    opacity: 0.7;
+}
+
+/* Status: Terbuka (Bisa Dimainkan) */
+.node-unlocked {
+    background-color: var(--color-blue);
+    box-shadow: 0 5px 0 #2980b9; /* Efek 3D */
+}
+.node-unlocked:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 8px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Status: Selesai */
+.node-completed {
+    background-color: var(--color-green-primary);
+    box-shadow: 0 5px 0 var(--color-green-dark); /* Efek 3D */
+}
+/* Tanda Centang untuk yang Selesai */
+.node-completed::after {
+    content: '✔';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--color-yellow);
+    color: var(--color-white);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 3px solid var(--color-white);
+}
+
+/* --- TAMBAHAN: TAMPILAN DASHBOARD BARU (v4) --- */
+
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+.dashboard-header h1 {
+    font-family: var(--font-secondary);
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--color-text);
+}
+.dashboard-header p {
+    font-size: 1.1rem;
+    color: var(--color-dark-gray);
+}
+
+/* Dashboard Statistik (4 Kartu) */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+.stat-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-light);
+    border: 1px solid #E0E0E0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+.stat-card .stat-icon {
+    font-size: 1.8rem;
+    padding: 10px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+/* Warna Ikon Kartu */
+.stat-card .icon-xp { background-color: #FFF9C4; color: #FBC02D; }
+.stat-card .icon-streak { background-color: #FFE0B2; color: #E67E22; }
+.stat-card .icon-hearts { background-color: #FFCDD2; color: #E74C3C; }
+.stat-card .icon-coins { background-color: #C8E6C9; color: #2ECC71; }
+
+.stat-card h3 {
+    font-family: var(--font-secondary);
+    font-size: 2.2rem;
+    color: var(--color-text);
+    margin: 0;
+}
+.stat-card p {
+    color: var(--color-dark-gray);
+    margin: 0;
+}
+
+/* Aktivitas Akademik */
+.academic-activities h2 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #EEE;
+    padding-bottom: 0.5rem;
+}
+.activity-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+.activity-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.activity-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+.activity-card .activity-icon {
+    font-size: 2rem;
+    padding: 15px;
+    background-color: var(--color-light-gray);
+    border-radius: 12px;
+}
+.activity-card h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem 0;
+}
+.activity-card p {
+    margin: 0;
+    color: var(--color-dark-gray);
+}
+
+
+/* --- TAMBAHAN: TAMPILAN PETA BELAJAR BARU (v4) --- */
+
+.level-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid #E0E0E0;
+    overflow: hidden; /* Penting untuk animasi expand */
+}
+.level-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+.level-badge {
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.level-card-header h2 {
+    margin: 0 0 0.2rem 0;
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    color: var(--color-text);
+}
+.level-card-header p {
+    margin: 0;
+    color: var(--color-dark-gray);
+}
+.module-count {
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: var(--color-light-gray);
+    color: var(--color-dark-gray);
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+}
+.toggle-arrow {
+    font-size: 1.5rem;
+    margin-left: auto;
+    color: var(--color-medium-gray);
+    transition: transform 0.3s;
+}
+
+/* Logika Buka/Tutup Kartu */
+.level-card-body {
+    padding: 0 2rem 2rem 2rem;
+    display: none; /* Sembunyi by default */
+    animation: fadeIn 0.5s;
+}
+.level-card.open .level-card-body {
+    display: block;
+}
+.level-card.open .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+/* Mengunci Level Menengah & Lanjutan */
+.level-card.locked .level-card-header {
+    background-color: #F8F9F9;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.level-card.locked .level-badge {
+    background-color: var(--color-medium-gray) !important;
+}
+.level-card.locked .level-card-header h2 {
+    color: var(--color-medium-gray);
+}
+.level-card.locked .toggle-arrow {
+    content: '\f023'; /* Ikon Gembok */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transform: rotate(0deg) !important;
+}
+
+/* Kita sembunyikan Peta Belajar lama di `home.html` */
+body[data-page="home"] .roadmap-container {
+    display: none;
+}

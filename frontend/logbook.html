@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Catatan - GAFINCY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+    <div class="header-left">
+        <img src="images/logo_unkartur.png" alt="Logo" class="logo">
+        <a href="home.html" class="brand-name">GAFINCY</a>
+    </div>
+    <div class="header-center">
+        <nav>
+            <a href="home.html">Dashboard</a>
+            <a href="belajar.html">Peta Belajar</a>
+            <a href="challenge.html">Tantangan</a>
+            <a href="tutor-ai.html">Tutor AI</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <div class="gamification-stats">
+            <div class="stat-item"><i class="fas fa-star icon-xp"></i> <span id="stat-xp">0</span></div>
+            <div class="stat-item"><i class="fas fa-fire icon-streak"></i> <span id="stat-streak">0</span></div>
+            <div class="stat-item"><i class="fas fa-heart icon-hearts"></i> <span id="stat-hearts">5</span></div>
+            <div class="stat-item"><i class="fas fa-coins icon-coins"></i> <span id="stat-coins">0</span></div>
+        </div>
+        <a href="leaderboard.html" class="leaderboard-btn" title="Papan Peringkat"><i class="fas fa-trophy"></i></a>
+        <button class="notification-btn" title="Notifikasi"><i class="fas fa-bell"></i></button>
+        <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">Notifikasi</div>
+            <div class="notification-item">Selamat datang di GAFINCY!</div>
+        </div>
+        <a href="profile.html" class="profile-btn" title="Profil"><i class="fas fa-user-circle"></i></a>
+    </div>
+</header>
+
+    <main class="container">
+        <div class="mascot-container">
+            <img src="images/maskot.png" alt="Si Kutilang Keuangan">
+        </div>
+        <h1 class="page-header">Buku Catatan Keuangan</h1>
+        <div class="logbook-container">
+            <div class="card logbook-form-card">
+                <h3>Tambah Entri Baru</h3>
+                <form id="logbook-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="log_date">Tanggal</label>
+                            <input type="date" id="log_date" name="log_date" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="type">Tipe</label>
+                            <select id="type" name="type" required>
+                                <option value="expense">Pengeluaran (Expense)</option>
+                                <option value="income">Pemasukan (Income)</option>
+                                <option value="saving">Tabungan (Saving)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="category">Kategori</label>
+                            <input type="text" id="category" name="category" required placeholder="Cth: Makanan, Transportasi">
+                        </div>
+                        <div class="input-group">
+                            <label for="amount">Jumlah (Rp)</label>
+                            <input type="number" id="amount" name="amount" required min="0" step="100">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="description">Deskripsi (Opsional)</label>
+                        <textarea id="description" name="description" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan Entri</button>
+                </form>
+            </div>
+            <div class="card logbook-entries-card">
+                <h3>Riwayat Entri</h3>
+                <div id="log-entries">
+                    <p>Memuat entri...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .logbook-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            max-width: 1200px;
+        }
+        .logbook-form-card h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .logbook-form-card .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        .logbook-form-card .input-group {
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+        .logbook-form-card label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .logbook-form-card input, 
+        .logbook-form-card select, 
+        .logbook-form-card textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--color-medium-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .logbook-entries-card h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .log-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-light-gray);
+        }
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+        .log-entry .log-category {
+            font-weight: 600;
+        }
+        .log-entry .log-amount {
+            font-weight: 700;
+        }
+        .log-type-income .log-amount {
+            color: var(--color-green-dark);
+        }
+        .log-type-expense .log-amount {
+            color: var(--color-danger);
+        }
+        .log-type-saving .log-amount {
+            color: var(--color-blue);
+        }
+
+        @media (max-width: 992px) {
+            .logbook-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <!-- Firebase Init & Auth/Main Logic -->
+    <script src="js/firebase-init.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

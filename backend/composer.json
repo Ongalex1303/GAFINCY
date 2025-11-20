@@ -1,0 +1,18 @@
+{
+    "name": "gafincy/backend",
+    "description": "Backend API for GAFINCY LMS",
+    "type": "project",
+    "require": {
+        "php": ">=8.0",
+        "kreait/firebase-php": "^6.0 || ^7.0"
+    },
+    "authors": [
+        {
+            "name": "Gemini AI",
+            "email": "gemini@google.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pengguna - GAFINCY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-left">
+        <img src="images/logo_unkartur.png" alt="Logo" class="logo">
+        <a href="home.html" class="brand-name">GAFINCY</a>
+    </div>
+    <div class="header-center">
+        <nav>
+            <a href="home.html">Dashboard</a>
+            <a href="belajar.html">Peta Belajar</a>
+            <a href="challenge.html">Tantangan</a>
+            <a href="tutor-ai.html">Tutor AI</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <div class="gamification-stats">
+            <div class="stat-item"><i class="fas fa-star icon-xp"></i> <span id="stat-xp">0</span></div>
+            <div class="stat-item"><i class="fas fa-fire icon-streak"></i> <span id="stat-streak">0</span></div>
+            <div class="stat-item"><i class="fas fa-heart icon-hearts"></i> <span id="stat-hearts">5</span></div>
+            <div class="stat-item"><i class="fas fa-coins icon-coins"></i> <span id="stat-coins">0</span></div>
+        </div>
+        <a href="leaderboard.html" class="leaderboard-btn" title="Papan Peringkat"><i class="fas fa-trophy"></i></a>
+        <button class="notification-btn" title="Notifikasi"><i class="fas fa-bell"></i></button>
+        <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">Notifikasi</div>
+            <div class="notification-item">Selamat datang di GAFINCY!</div>
+        </div>
+        <a href="profile.html" class="profile-btn active" title="Profil"><i class="fas fa-user-circle"></i></a>
+    </div>
+</header>
+
+    <main class="container">
+        <div class="mascot-container">
+            <img src="images/maskot.png" alt="Si Kutilang Keuangan">
+        </div>
+        <h1 class="page-header">Profil Saya</h1>
+        <div class="card profile-card">
+            <div class="profile-main">
+                <div class="profile-avatar">
+                    <!-- Avatar bisa diganti dengan gambar pengguna -->
+                    <i class="fas fa-user-circle" style="font-size: 100px; color: var(--color-medium-gray);"></i>
+                </div>
+                <div class="profile-info">
+                    <h2 id="profile-username">Nama Pengguna</h2>
+                    <p id="profile-email">email@pengguna.com</p>
+                    <button id="logout-btn" class="btn btn-danger" style="width: auto; margin-top: 1rem;">Logout</button>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-box">
+                    <h3>Total XP</h3>
+                    <p><i class="fas fa-star icon-xp"></i> <span id="profile-xp">0</span></p>
+                </div>
+                <div class="stat-box">
+                    <h3>Koin</h3>
+                    <p><i class="fas fa-coins icon-coins"></i> <span id="profile-coins">0</span></p>
+                </div>
+                <div class="stat-box">
+                    <h3>Streak Saat Ini</h3>
+                    <p><i class="fas fa-fire icon-streak"></i> <span id="profile-streak">0</span> Hari</p>
+                </div>
+            </div>
+            <div class="profile-shortcuts">
+                <a href="logbook.html" class="shortcut-btn">
+                    <i class="fas fa-book"></i>
+                    <span>Buku Catatan</span>
+                </a>
+                <a href="badges.html" class="shortcut-btn">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Badge & Prestasi</span>
+                </a>
+                <a href="#" class="shortcut-btn">
+                    <i class="fas fa-cog"></i>
+                    <span>Pengaturan</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .profile-card {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .profile-main {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            border-bottom: 1px solid var(--color-light-gray);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .stat-box {
+            background: var(--color-light-gray);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+        }
+        .stat-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-dark-gray);
+        }
+        .stat-box p {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .profile-shortcuts {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .shortcut-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--color-light-gray);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--color-text);
+            width: 120px;
+            transition: background-color 0.3s;
+        }
+        .shortcut-btn:hover {
+            background-color: var(--color-medium-gray);
+        }
+        .shortcut-btn i {
+            font-size: 2rem;
+            color: var(--color-green-primary);
+        }
+        .btn-danger {
+            background-color: var(--color-danger);
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+    </style>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <!-- Firebase Init & Auth/Main Logic -->
+    <script src="js/firebase-init.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

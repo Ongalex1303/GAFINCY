@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papan Peringkat - GAFINCY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-left">
+        <img src="images/logo_unkartur.png" alt="Logo" class="logo">
+        <a href="home.html" class="brand-name">GAFINCY</a>
+    </div>
+    <div class="header-center">
+        <nav>
+            <a href="home.html">Dashboard</a>
+            <a href="belajar.html">Peta Belajar</a>
+            <a href="challenge.html">Tantangan</a>
+            <a href="tutor-ai.html">Tutor AI</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <div class="gamification-stats">
+            <div class="stat-item"><i class="fas fa-star icon-xp"></i> <span id="stat-xp">0</span></div>
+            <div class="stat-item"><i class="fas fa-fire icon-streak"></i> <span id="stat-streak">0</span></div>
+            <div class="stat-item"><i class="fas fa-heart icon-hearts"></i> <span id="stat-hearts">5</span></div>
+            <div class="stat-item"><i class="fas fa-coins icon-coins"></i> <span id="stat-coins">0</span></div>
+        </div>
+        <a href="leaderboard.html" class="leaderboard-btn active" title="Papan Peringkat"><i class="fas fa-trophy"></i></a>
+        <button class="notification-btn" title="Notifikasi"><i class="fas fa-bell"></i></button>
+        <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">Notifikasi</div>
+            <div class="notification-item">Selamat datang di GAFINCY!</div>
+        </div>
+        <a href="profile.html" class="profile-btn" title="Profil"><i class="fas fa-user-circle"></i></a>
+    </div>
+</header>
+
+    <main class="container">
+        <div class="mascot-container">
+            <img src="images/maskot.png" alt="Si Kutilang Keuangan">
+        </div>
+        <h1 class="page-header">Papan Peringkat</h1>
+        <div class="card leaderboard-card">
+            <div class="leaderboard-filters">
+                <button class="filter-btn active">Global</button>
+                <button class="filter-btn">Lokal</button>
+                <button class="filter-btn">Teman</button>
+            </div>
+            <p id="user-rank-info" class="user-rank-info">Memuat peringkat Anda...</p>
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th style="width: 10%; text-align: center;">Peringkat</th>
+                        <th>Pengguna</th>
+                        <th style="width: 20%;">XP</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <!-- Data akan diisi oleh main.js -->
+                    <tr><td colspan="3" style="text-align: center; padding: 2rem;">Memuat data...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <style>
+        .leaderboard-card {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .leaderboard-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--color-medium-gray);
+            background: transparent;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--color-green-primary);
+            color: var(--color-white);
+            border-color: var(--color-green-primary);
+        }
+        .user-rank-info {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: var(--color-light-gray);
+            border-radius: var(--border-radius);
+        }
+    </style>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <!-- Firebase Init & Auth/Main Logic -->
+    <script src="js/firebase-init.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

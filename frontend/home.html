@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - GAFINCY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-left">
+        <img src="images/logo_unkartur.png" alt="Logo" class="logo">
+        <a href="home.html" class="brand-name">GAFINCY</a>
+    </div>
+    <div class="header-center">
+        <nav>
+            <a href="home.html" class="active">Dashboard</a>
+            <a href="belajar.html">Peta Belajar</a>
+            <a href="challenge.html">Tantangan</a>
+            <a href="tutor-ai.html">Tutor AI</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <div class="gamification-stats">
+            <div class="stat-item"><i class="fas fa-star icon-xp"></i> <span id="stat-xp">0</span></div>
+            <div class="stat-item"><i class="fas fa-fire icon-streak"></i> <span id="stat-streak">0</span></div>
+            <div class="stat-item"><i class="fas fa-heart icon-hearts"></i> <span id="stat-hearts">5</span></div>
+            <div class="stat-item"><i class="fas fa-coins icon-coins"></i> <span id="stat-coins">0</span></div>
+        </div>
+        <a href="leaderboard.html" class="leaderboard-btn" title="Papan Peringkat"><i class="fas fa-trophy"></i></a>
+        <button class="notification-btn" title="Notifikasi"><i class="fas fa-bell"></i></button>
+        <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">Notifikasi</div>
+            <div class="notification-item">Selamat datang di GAFINCY!</div>
+        </div>
+        <a href="profile.html" class="profile-btn" title="Profil"><i class="fas fa-user-circle"></i></a>
+    </div>
+</header>
+
+<main class="container">
+    <div class="dashboard-header">
+        <h1 id="welcome-message">Selamat Datang!</h1>
+        <p>Pelajari keuangan melalui petualangan yang terstruktur dan menyenangkan</p>
+    </div>
+
+    <section class="dashboard-stats">
+        <div class="stat-card">
+            <i class="fas fa-star stat-icon icon-xp"></i>
+            <h3 id="stat-xp-card">0</h3>
+            <p>Total Pengalaman (XP)</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-fire stat-icon icon-streak"></i>
+            <h3 id="stat-streak-card">0 hari</h3>
+            <p>Rangkaian Belajar</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-heart stat-icon icon-hearts"></i>
+            <h3 id="stat-hearts-card">5/5</h3>
+            <p>Kesempatan</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-coins stat-icon icon-coins"></i>
+            <h3 id="stat-coins-card">0</h3>
+            <p>Token Gafincy</p>
+        </div>
+    </section>
+
+    <section class="academic-activities">
+        <h2>Aktivitas Akademik</h2>
+        <div class="activity-cards">
+            <a href="logbook.html" class="activity-card">
+                <i class="fas fa-book-open activity-icon" style="color: #3498DB;"></i>
+                <div>
+                    <h4>Log Book Harian</h4>
+                    <p>Refleksi dan catatan pembelajaran</p>
+                </div>
+            </a>
+            <a href="leaderboard.html" class="activity-card">
+                <i class="fas fa-trophy activity-icon" style="color: #9B59B6;"></i>
+                <div>
+                    <h4>Papan Peringkat</h4>
+                    <p>Kompetisi sehat dengan sesama pelajar</p>
+                </div>
+            </a>
+            <a href="challenge.html" class="activity-card">
+                <i class="fas fa-gamepad activity-icon" style="color: #E67E22;"></i>
+                <div>
+                    <h4>Tantangan Khusus</h4>
+                    <p>Permainan edukatif finansial (Minigame)</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

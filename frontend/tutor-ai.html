@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor AI - GAFINCY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+    <div class="header-left">
+        <img src="images/logo_unkartur.png" alt="Logo" class="logo">
+        <a href="home.html" class="brand-name">GAFINCY</a>
+    </div>
+    <div class="header-center">
+        <nav>
+            <a href="home.html">Dashboard</a>
+            <a href="belajar.html">Peta Belajar</a>
+            <a href="challenge.html">Tantangan</a>
+            <a href="tutor-ai.html" class="active">Tutor AI</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <div class="gamification-stats">
+            <div class="stat-item"><i class="fas fa-star icon-xp"></i> <span id="stat-xp">0</span></div>
+            <div class="stat-item"><i class="fas fa-fire icon-streak"></i> <span id="stat-streak">0</span></div>
+            <div class="stat-item"><i class="fas fa-heart icon-hearts"></i> <span id="stat-hearts">5</span></div>
+            <div class="stat-item"><i class="fas fa-coins icon-coins"></i> <span id="stat-coins">0</span></div>
+        </div>
+        <a href="leaderboard.html" class="leaderboard-btn" title="Papan Peringkat"><i class="fas fa-trophy"></i></a>
+        <button class="notification-btn" title="Notifikasi"><i class="fas fa-bell"></i></button>
+        <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">Notifikasi</div>
+            <div class="notification-item">Selamat datang di GAFINCY!</div>
+        </div>
+        <a href="profile.html" class="profile-btn" title="Profil"><i class="fas fa-user-circle"></i></a>
+    </div>
+</header>
+
+    <main class="container">
+        <h1 class="page-header">Tutor AI Keuangan</h1>
+        <div class="card" style="text-align: center;">
+            <h2>Segera Hadir!</h2>
+            <p>Fitur konsultasi dengan AI (Gemini) sedang dalam pengembangan.</p>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Belajar - GAFINCY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-left">
+        <img src="images/logo_unkartur.png" alt="Logo" class="logo">
+        <a href="home.html" class="brand-name">GAFINCY</a>
+    </div>
+    <div class="header-center">
+        <nav>
+            <a href="home.html">Dashboard</a>
+            <a href="belajar.html" class="active">Peta Belajar</a>
+            <a href="challenge.html">Tantangan</a>
+            <a href="tutor-ai.html">Tutor AI</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <div class="gamification-stats">
+            <div class="stat-item"><i class="fas fa-star icon-xp"></i> <span id="stat-xp">0</span></div>
+            <div class="stat-item"><i class="fas fa-fire icon-streak"></i> <span id="stat-streak">0</span></div>
+            <div class="stat-item"><i class="fas fa-heart icon-hearts"></i> <span id="stat-hearts">5</span></div>
+            <div class="stat-item"><i class="fas fa-coins icon-coins"></i> <span id="stat-coins">0</span></div>
+        </div>
+        <a href="leaderboard.html" class="leaderboard-btn" title="Papan Peringkat"><i class="fas fa-trophy"></i></a>
+        <button class="notification-btn" title="Notifikasi"><i class="fas fa-bell"></i></button>
+        <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">Notifikasi</div>
+            <div class="notification-item">Selamat datang di GAFINCY!</div>
+        </div>
+        <a href="profile.html" class="profile-btn" title="Profil"><i class="fas fa-user-circle"></i></a>
+    </div>
+</header>
+
+<main class="container">
+    <div class="dashboard-header">
+        <h1>Tingkat Akademik</h1>
+        <p>Progres belajar yang disesuaikan dengan level pendidikan</p>
+    </div>
+
+    <div class="level-card" id="level-card-sd">
+        <div class="level-card-header">
+            <div class="level-badge" style="background-color: #2ECC71;">1</div>
+            <div>
+                <h2>Pemula (TK-SD) <span class="module-count">10 Modul</span></h2>
+                <p>Dasar-dasar literasi keuangan untuk anak usia 5-12 tahun</p>
+            </div>
+            <i class="fas fa-chevron-down toggle-arrow"></i>
+        </div>
+        <div class="level-card-body">
+            <p><strong>Peta Petualangan:</strong> Selesaikan semua modul untuk lanjut.</p>
+            <div class="world-path">
+                <div class="path-node" data-level-id="tk_sd_1"><i class="fas fa-money-bill-wave"></i><span class="node-label">Mengenal Uang</span></div>
+                <div class="path-node" data-level-id="tk_sd_2"><i class="fas fa-piggy-bank"></i><span class="node-label">Menabung</span></div>
+                <div class="path-node" data-level-id="tk_sd_3"><i class="fas fa-store"></i><span class="node-label">Keinginan vs Kebutuhan</span></div>
+                <div class="path-node" data-level-id="tk_sd_4"><i class="fas fa-shopping-cart"></i><span class="node-label">Belanja Bijak</span></div>
+                <div class="path-node" data-level-id="tk_sd_5"><i class="fas fa-gifts"></i><span class="node-label">Memberi & Berbagi</span></div>
+                <div class="path-node" data-level-id="tk_sd_6"><i class="fas fa-briefcase"></i><span class="node-label">Sumber Uang</span></div>
+                <div class="path-node" data-level-id="tk_sd_7"><i class="fas fa-calculator"></i><span class="node-label">Berhitung Dasar</span></div>
+                <div class="path-node" data-level-id="tk_sd_8"><i class="fas fa-balance-scale"></i><span class="node-label">Nilai Barang</span></div>
+                <div class="path-node" data-level-id="tk_sd_9"><i class="fas fa-shield-alt"></i><span class="node-label">Menjaga Uang</span></div>
+                <div class="path-node" data-level-id="tk_sd_10"><i class="fas fa-graduation-cap"></i><span class="node-label">Ujian Pemula</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="level-card" id="level-card-smp">
+        <div class="level-card-header">
+            <div class="level-badge" style="background-color: #F39C12;">2</div>
+            <div>
+                <h2>Menengah (SMP) <span class="module-count">10 Modul</span></h2>
+                <p>Konsep keuangan untuk remaja usia 13-15 tahun</p>
+            </div>
+            <i class="fas fa-chevron-down toggle-arrow"></i>
+        </div>
+        <div class="level-card-body">
+            <p><strong>Peta Petualangan:</strong> Selesaikan semua modul untuk lanjut.</p>
+            <div class="world-path">
+                <div class="path-node" data-level-id="smp_1"><i class="fas fa-chart-line"></i><span class="node-label">Anggaran Pribadi</span></div>
+                <div class="path-node" data-level-id="smp_2"><i class="fas fa-university"></i><span class="node-label">Perbankan Dasar</span></div>
+                <div class="path-node" data-level-id="smp_3"><i class="fas fa-credit-card"></i><span class="node-label">Uang Elektronik</span></div>
+                <div class="path-node" data-level-id="smp_4"><i class="fas fa-bullseye"></i><span class="node-label">Tujuan Keuangan</span></div>
+                <div class="path-node" data-level-id="smp_5"><i class="fas fa-percent"></i><span class="node-label">Bunga Sederhana</span></div>
+                <div class="path-node" data-level-id="smp_6"><i class="fas fa-user-secret"></i><span class="node-label">Risiko & Penipuan</span></div>
+                <div class="path-node" data-level-id="smp_7"><i class="fas fa-lightbulb"></i><span class="node-label">Wirausaha Muda</span></div>
+                <div class="path-node" data-level-id="smp_8"><i class="fas fa-file-invoice-dollar"></i><span class="node-label">Pendapatan & Pajak</span></div>
+                <div class="path-node" data-level-id="smp_9"><i class="fas fa-mobile-alt"></i><span class="node-label">Fintech Dasar</span></div>
+                <div class="path-node" data-level-id="smp_10"><i class="fas fa-graduation-cap"></i><span class="node-label">Ujian Menengah</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="level-card" id="level-card-sma">
+        <div class="level-card-header">
+            <div class="level-badge" style="background-color: #3498DB;">3</div>
+            <div>
+                <h2>Lanjutan (SMA) <span class="module-count">10 Modul</span></h2>
+                <p>Keuangan lanjut untuk remaja usia 16-18 tahun</p>
+            </div>
+            <i class="fas fa-chevron-down toggle-arrow"></i>
+        </div>
+        <div class="level-card-body">
+            <p><strong>Peta Petualangan:</strong> Selesaikan semua modul untuk lanjut.</p>
+            <div class="world-path">
+                <div class="path-node" data-level-id="sma_1"><i class="fas fa-seedling"></i><span class="node-label">Investasi 101</span></div>
+                <div class="path-node" data-level-id="sma_2"><i class="fas fa-file-contract"></i><span class="node-label">Asuransi</span></div>
+                <div class="path-node" data-level-id="sma_3"><i class="fas fa-landmark"></i><span class="node-label">Kredit & Utang</span></div>
+                <div class="path-node" data-level-id="sma_4"><i class="fas fa-chart-pie"></i><span class="node-label">Inflasi</span></div>
+                <div class="path-node" data-level-id="sma_5"><i class="fas fa-globe-asia"></i><span class="node-label">Ekonomi Global</span></div>
+                <div class="path-node" data-level-id="sma_6"><i class="fas fa-building-columns"></i><span class="node-label">Pasar Modal</span></div>
+                <div class="path-node" data-level-id="sma_7"><i class="fas fa-home"></i><span class="node-label">Perencanaan Masa Depan</span></div>
+                <div class="path-node" data-level-id="sma_8"><i class="fas fa-gavel"></i><span class="node-label">Hak Konsumen</span></div>
+                <div class="path-node" data-level-id="sma_9"><i class="fas fa-brain"></i><span class="node-label">Psikologi Keuangan</span></div>
+                <div class="path-node" data-level-id="sma_10"><i class="fas fa-graduation-cap"></i><span class="node-label">Ujian Lanjut</span></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
